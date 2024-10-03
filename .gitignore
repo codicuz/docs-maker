@@ -2,5 +2,6 @@
 .vscode
 
 .pytest_cache
+example.db
 dist
 __pycache__
