@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "docs-maker"
+version = "0.1.0"
+description = "Documents Maker"
+authors = ["Roman <rabalan83@main.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+docs-maker = 'docs_maker.cli.argparse:cli'
