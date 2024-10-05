@@ -1,5 +1,6 @@
 .venv
 .vscode
+.idea
 
 db.sqlite3
 .pytest_cache
