@@ -1,27 +1,33 @@
 import sys
 import argparse
-# import docs_maker
+import docs_maker_messages as dm
+
 from docs_maker.database.init_db_sqlite3 import InitDbSqlite3
 from docs_maker.database.init_db_postgres import InitDbPostgres
+
+l = dm.set_language('ru')
 
 def cli():
     postgres_cmd = 'postgres'
     sqlite3_cmd = 'sqlite3'
-    
-    parser = argparse.ArgumentParser(prog='docs-maker', description='Конструктор документов')
-    parser.add_argument('-v', '--version', action='version', version=f'%(prog)s Версия 0.1.0')
-    
-    subparser = parser.add_subparsers(dest='commands', help='Команды')
+    gui_cmd = 'gui'
 
-    pg_parser = subparser.add_parser(postgres_cmd, help='Работа с БД PostgreSQL')
-    pg_parser.add_argument('-d', '--db-name', type=str, help='Имя БД')
-    pg_parser.add_argument('-U', '--db-username', type=str, help='Имя пользователя БД')
-    pg_parser.add_argument('-P', '--db-password', type=str, help='Пароль пользователя БД')
-    pg_parser.add_argument('-H', '--hostname', type=str, default='localhost', help='Пароль пользователя БД')
-    pg_parser.add_argument('-p', '--port', type=str, default='5432', help='Порт БД')
+    parser = argparse.ArgumentParser(prog='docs-maker', description=l.gettext('App Title'))
+    parser.add_argument('-v', '--version', action='version', version=f'%(prog)s {l.gettext("Version")} 0.1.0')
+    
+    subparser = parser.add_subparsers(dest='commands', help=l.gettext('Commands'))
+
+    pg_parser = subparser.add_parser(postgres_cmd, help=l.gettext('W DB PostgreSQL'))
+    pg_parser.add_argument('-d', '--db-name', type=str, help=l.gettext('DB name'))
+    pg_parser.add_argument('-U', '--db-username', type=str, help=l.gettext('DB user name'))
+    pg_parser.add_argument('-P', '--db-password', type=str, help=l.gettext('DB user password'))
+    pg_parser.add_argument('-H', '--hostname', type=str, default='localhost', help=l.gettext('DB hostname'))
+    pg_parser.add_argument('-p', '--port', type=str, default='5432', help=l.gettext('DB port'))
         
-    sqlite3_parser = subparser.add_parser(sqlite3_cmd, help='Работа с БД SQLite3')
-    sqlite3_parser.add_argument('-d', '--db-name', type=str, help='Имя БД')
+    sqlite3_parser = subparser.add_parser(sqlite3_cmd, help=l.gettext('W DB SQLite3'))
+    sqlite3_parser.add_argument('-d', '--db-name', type=str, help=l.gettext('DB name'))
+
+    gui_parser = subparser.add_parser(gui_cmd, help=l.gettext('GUI parser'))
 
     args = parser.parse_args()
 
@@ -46,3 +52,7 @@ def cli():
             
         idb = InitDbSqlite3(args.db_name)
         idb.init()
+
+    elif args.commands == gui_cmd:
+        import docs_maker_gui
+        docs_maker_gui.docsMakerRun()

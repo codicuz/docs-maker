@@ -5,10 +5,17 @@ description = "Documents Maker"
 authors = ["Roman <rabalan83@main.ru>"]
 readme = "README.md"
 
+packages = [
+    {include = "docs_maker"},
+    {include = "docs_maker_messages"},
+    {include = 'docs_maker_gui'}
+]
+
 [tool.poetry.dependencies]
 python = "^3.10"
 sqlalchemy = "^2.0.35"
 psycopg2-binary = "^2.9.9"
+pyside6 = "^6.7.3"
 
 [build-system]
 requires = ["poetry-core"]
