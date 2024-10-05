@@ -1,4 +1,4 @@
-import docs_maker_pyside6 as dm
+import docs_maker_gui as dm
 
 if __name__ == '__main__':
     dm.docsMakerRun()

@@ -1,1 +1,0 @@
-from docs_maker_pyside6.classes.MainWIndow import docsMakerRun

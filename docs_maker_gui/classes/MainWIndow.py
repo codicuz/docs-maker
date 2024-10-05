@@ -1,6 +1,6 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
-from docs_maker_pyside6.ui.docs_maker_main_window import Ui_MainWindow 
+from docs_maker_gui.ui.docs_maker_main_window import Ui_MainWindow 
 
 class DocsMakerMainWindow(QMainWindow):
     def __init__(self):
