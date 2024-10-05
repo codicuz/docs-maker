@@ -5,3 +5,4 @@
 example.db
 dist
 __pycache__
+poetry.lock
