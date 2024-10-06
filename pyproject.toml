@@ -8,7 +8,7 @@ readme = "README.md"
 packages = [
     {include = "docs_maker"},
     {include = "docs_maker_messages"},
-    {include = 'docs_maker_gui'}
+    {include = "docs_maker_gui"}
 ]
 
 [tool.poetry.dependencies]
@@ -22,4 +22,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-docs-maker = 'docs_maker.cli.argparse:cli'
+docs-maker = "docs_maker.cli.argparse:cli"

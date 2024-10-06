@@ -14,13 +14,13 @@
    <string>Docs Maker</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QPushButton" name="main_btn">
             <property name="styleSheet">
@@ -70,7 +70,7 @@
         <item>
          <widget class="QScrollArea" name="scrollArea">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -95,7 +95,7 @@
              <x>0</x>
              <y>0</y>
              <width>112</width>
-             <height>336</height>
+             <height>338</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout">
@@ -141,10 +141,10 @@
          </sizepolicy>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="mainPage_stPage">
-         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
            <widget class="QLabel" name="mainWindow_lbl">
             <property name="font">
@@ -173,10 +173,41 @@
             </property>
            </spacer>
           </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="mWVersion_lbl">
+              <property name="text">
+               <string>Version</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="mWVersionValue_lbl">
+              <property name="text">
+               <string>0.0.0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
          </layout>
         </widget>
         <widget class="QWidget" name="menuPage_stPage">
-         <layout class="QVBoxLayout" name="verticalLayout_5">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="QLabel" name="menu_lbl">
             <property name="font">
