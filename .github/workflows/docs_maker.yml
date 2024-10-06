@@ -1,0 +1,48 @@
+name: docks_maker Application CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'f/**'
+      - 't/**'
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  unittest:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install docs_maker for unit test
+        run: |
+          pip3 install .
+
+      - name: Execute unit test
+        run: |
+          pytest
+
+  build:
+    runs-on: self-hosted
+    needs: unittest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - name: Build package
+        uses: actions/checkout@v3
+
+      - name: Get version from tag
+        run: |
+          TAG="${{ github.ref }}"
+          TAG=${TAG#refs/tags/}
+          poetry version $TAG
+
+      - name: Check pyproject.toml
+        run: |
+          cat pyproject.toml
+
+      - name: Package
+        run: |
+          poetry build
