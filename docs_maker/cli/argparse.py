@@ -4,6 +4,7 @@ import docs_maker_messages as dm
 
 from docs_maker.database.init_db_sqlite3 import InitDbSqlite3
 from docs_maker.database.init_db_postgres import InitDbPostgres
+from docs_maker.cli.version import get_version
 
 l = dm.set_language('ru')
 
@@ -13,7 +14,7 @@ def cli():
     gui_cmd = 'gui'
 
     parser = argparse.ArgumentParser(prog='docs-maker', description=l.gettext('App Title'))
-    parser.add_argument('-v', '--version', action='version', version=f'%(prog)s {l.gettext("Version")} 0.1.0')
+    parser.add_argument('-v', '--version', action='version', version=f'%(prog)s {l.gettext("Version")} {get_version("docs_maker")}')
     
     subparser = parser.add_subparsers(dest='commands', help=l.gettext('Commands'))
 

@@ -4,11 +4,14 @@ import docs_maker_messages as dm
 from docs_maker_gui.classes.PageSwitcher import PageSwitcher
 
 from PySide6.QtWidgets import QApplication, QMainWindow
-from docs_maker_gui.ui.docs_maker_main_window import Ui_MainWindow 
+from docs_maker_gui.ui.docs_maker_main_window import Ui_MainWindow
+from docs_maker_gui.classes.TextSetter import TextSetter
+
 
 class DocsMakerMainWindow(QMainWindow):
     def __init__(self):
         super(DocsMakerMainWindow, self).__init__()
+
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.pageSwitcher = PageSwitcher(self.ui)
@@ -21,10 +24,8 @@ class DocsMakerMainWindow(QMainWindow):
 
     def setLanguage(self, lang_code):
         l = dm.set_language(lang_code)
-
         self.setWindowTitle(l.gettext('App Title'))
-        self.ui.mainWindow_lbl.setText((l.gettext('MainPage')))
-        self.ui.menu_lbl.setText(l.gettext('MenuPage'))
+        TextSetter(self.ui).textSetter(l)
 
 def docsMakerRun():
     app = QApplication(sys.argv)
