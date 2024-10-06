@@ -1,4 +1,4 @@
-name: docks_maker Application CI
+name: docs_maker Application CI
 
 on:
   push:
