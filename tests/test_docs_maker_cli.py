@@ -8,7 +8,7 @@ class TestDocsMaker():
 
     def test_version(self, capsys, monkeypatch):
         monkeypatch.setattr('sys.argv', ['docs-maker', '--version'])
-        want = 'docs-maker Версия 0.1.0\n'
+        want = 'docs-maker Версия develop\n'
         docs_maker.cli()
         captured = capsys.readouterr()
 

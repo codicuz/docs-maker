@@ -17,13 +17,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install docs_maker for unit test
-        run: |
-          pip3 install .
-
       - name: Execute unit test
         run: |
-          pytest
+          python -m pytest tests
 
   build:
     runs-on: self-hosted

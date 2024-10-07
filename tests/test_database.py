@@ -15,16 +15,12 @@ class TestDocsMaker():
 
         session.close()
         
-
     def test_documents_table(self, in_memory_db):
         _, engine = in_memory_db
         inspector = inspect(engine)
         tables = inspector.get_table_names()
 
         table = 'documents'
-        assert table in tables, f"Таблица {table} должна быть создана"
-
-        table = 'documents2'
         assert table in tables, f"Таблица {table} должна быть создана"
 
     def test_insert_documents_table(self, in_memory_db):
