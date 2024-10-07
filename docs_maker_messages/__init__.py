@@ -8,6 +8,3 @@ def set_language(lang_code: str):
     lang.install()
 
     return lang
-
-def g_t(translate_id: str):
-    return gettext.gettext(translate_id)

@@ -38,3 +38,6 @@ msgstr "Main Page"
 
 msgid "GUI parser"
 msgstr "Start GUI"
+
+msgid "btn_clicked"
+msgstr "Button clicked!"

@@ -38,3 +38,6 @@ msgstr "Основная страница"
 
 msgid "GUI parser"
 msgstr "Запустить графический интерфейс"
+
+msgid "btn_clicked"
+msgstr "Кнопка нажата!"
