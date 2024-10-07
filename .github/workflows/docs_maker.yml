@@ -43,6 +43,7 @@ jobs:
         run: |
           cat pyproject.toml
 
-      - name: Package
+      - name: Publish
         run: |
-          poetry build
+          poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
+          poetry publish --build
