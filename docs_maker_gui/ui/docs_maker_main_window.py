@@ -163,10 +163,10 @@ class Ui_MainWindow(object):
 
         self.formLayout = QFormLayout()
         self.formLayout.setObjectName(u"formLayout")
-        self.menuDb_lbl = QLabel(self.menuPage_stPage)
-        self.menuDb_lbl.setObjectName(u"menuDb_lbl")
+        self.db_type = QLabel(self.menuPage_stPage)
+        self.db_type.setObjectName(u"db_type")
 
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.menuDb_lbl)
+        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.db_type)
 
         self.menuDb_cbx = QComboBox(self.menuPage_stPage)
         icon2 = QIcon()
@@ -177,36 +177,56 @@ class Ui_MainWindow(object):
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.menuDb_cbx)
 
-        self.menuDbName_lbl = QLabel(self.menuPage_stPage)
-        self.menuDbName_lbl.setObjectName(u"menuDbName_lbl")
+        self.db_name = QLabel(self.menuPage_stPage)
+        self.db_name.setObjectName(u"db_name")
 
-        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.menuDbName_lbl)
+        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.db_name)
 
         self.menuDbName_le = QLineEdit(self.menuPage_stPage)
         self.menuDbName_le.setObjectName(u"menuDbName_le")
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.menuDbName_le)
 
-        self.menuDbUsername_lbl = QLabel(self.menuPage_stPage)
-        self.menuDbUsername_lbl.setObjectName(u"menuDbUsername_lbl")
+        self.db_host = QLabel(self.menuPage_stPage)
+        self.db_host.setObjectName(u"db_host")
 
-        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.menuDbUsername_lbl)
+        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.db_host)
+
+        self.menuDbHost_le = QLineEdit(self.menuPage_stPage)
+        self.menuDbHost_le.setObjectName(u"menuDbHost_le")
+
+        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.menuDbHost_le)
+
+        self.db_port = QLabel(self.menuPage_stPage)
+        self.db_port.setObjectName(u"db_port")
+
+        self.formLayout.setWidget(3, QFormLayout.LabelRole, self.db_port)
+
+        self.menuDbPort_le = QLineEdit(self.menuPage_stPage)
+        self.menuDbPort_le.setObjectName(u"menuDbPort_le")
+
+        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.menuDbPort_le)
+
+        self.db_username = QLabel(self.menuPage_stPage)
+        self.db_username.setObjectName(u"db_username")
+
+        self.formLayout.setWidget(4, QFormLayout.LabelRole, self.db_username)
 
         self.menuDbUsername_le = QLineEdit(self.menuPage_stPage)
         self.menuDbUsername_le.setObjectName(u"menuDbUsername_le")
 
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.menuDbUsername_le)
+        self.formLayout.setWidget(4, QFormLayout.FieldRole, self.menuDbUsername_le)
 
-        self.menuDbPassword_lbl = QLabel(self.menuPage_stPage)
-        self.menuDbPassword_lbl.setObjectName(u"menuDbPassword_lbl")
+        self.db_password = QLabel(self.menuPage_stPage)
+        self.db_password.setObjectName(u"db_password")
 
-        self.formLayout.setWidget(3, QFormLayout.LabelRole, self.menuDbPassword_lbl)
+        self.formLayout.setWidget(5, QFormLayout.LabelRole, self.db_password)
 
         self.menuDbPassword_le = QLineEdit(self.menuPage_stPage)
         self.menuDbPassword_le.setObjectName(u"menuDbPassword_le")
         self.menuDbPassword_le.setEchoMode(QLineEdit.EchoMode.Password)
 
-        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.menuDbPassword_le)
+        self.formLayout.setWidget(5, QFormLayout.FieldRole, self.menuDbPassword_le)
 
 
         self.verticalLayout_2.addLayout(self.formLayout)
@@ -256,13 +276,16 @@ class Ui_MainWindow(object):
         self.mWVersion_lbl.setText(QCoreApplication.translate("MainWindow", u"Version", None))
         self.mWVersionValue_lbl.setText(QCoreApplication.translate("MainWindow", u"0.0.0", None))
         self.menu_lbl.setText(QCoreApplication.translate("MainWindow", u"menu_lbl", None))
-        self.menuDb_lbl.setText(QCoreApplication.translate("MainWindow", u"db", None))
+        self.db_type.setText(QCoreApplication.translate("MainWindow", u"db", None))
         self.menuDb_cbx.setItemText(0, QCoreApplication.translate("MainWindow", u"SQLite3", None))
         self.menuDb_cbx.setItemText(1, QCoreApplication.translate("MainWindow", u"PostgreSQL", None))
 
-        self.menuDbName_lbl.setText(QCoreApplication.translate("MainWindow", u"db_name", None))
-        self.menuDbUsername_lbl.setText(QCoreApplication.translate("MainWindow", u"db_username", None))
-        self.menuDbPassword_lbl.setText(QCoreApplication.translate("MainWindow", u"db_password", None))
+        self.db_name.setText(QCoreApplication.translate("MainWindow", u"db_name", None))
+        self.menuDbName_le.setText("")
+        self.db_host.setText(QCoreApplication.translate("MainWindow", u"db_host", None))
+        self.db_port.setText(QCoreApplication.translate("MainWindow", u"db_port", None))
+        self.db_username.setText(QCoreApplication.translate("MainWindow", u"db_username", None))
+        self.db_password.setText(QCoreApplication.translate("MainWindow", u"db_password", None))
         self.menuApply_btn.setText(QCoreApplication.translate("MainWindow", u"apply", None))
     # retranslateUi
 

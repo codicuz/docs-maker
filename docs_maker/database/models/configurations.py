@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from docs_maker.database.base import IBase
 
+
 class Configurations(IBase.Base):
     __tablename__ = 'configurations'
 

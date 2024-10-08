@@ -1,7 +1,10 @@
+from sqlalchemy.orm import Session
 from docs_maker.database.base import IBase
-from docs_maker.database.models import Documents
 
-class InitDbPostgres():
+
+class InitDbPostgres:
+    import docs_maker.database.models
+
     def __init__(self, username: str, password: str, hostname: str, port: str, db_name: str):
         self.__username = username
         self.__password = password
@@ -17,4 +20,8 @@ class InitDbPostgres():
         iBase.Base.metadata.create_all(engine)
         session = iBase.get_session(engine)
 
+        return session
+
+    @staticmethod
+    def close_session(session: Session):
         session.close()

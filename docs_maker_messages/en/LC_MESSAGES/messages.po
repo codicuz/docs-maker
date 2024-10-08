@@ -56,3 +56,9 @@ msgstr "Information"
 
 msgid "Apply config"
 msgstr "Configuration applied"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Not impl"
+msgstr "Not implemented"

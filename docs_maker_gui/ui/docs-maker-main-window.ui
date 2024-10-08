@@ -233,7 +233,7 @@
           <item>
            <layout class="QFormLayout" name="formLayout">
             <item row="0" column="0">
-             <widget class="QLabel" name="menuDb_lbl">
+             <widget class="QLabel" name="db_type">
               <property name="text">
                <string>db</string>
               </property>
@@ -262,33 +262,57 @@
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QLabel" name="menuDbName_lbl">
+             <widget class="QLabel" name="db_name">
               <property name="text">
                <string>db_name</string>
               </property>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="menuDbName_le"/>
+             <widget class="QLineEdit" name="menuDbName_le">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
             </item>
             <item row="2" column="0">
-             <widget class="QLabel" name="menuDbUsername_lbl">
+             <widget class="QLabel" name="db_host">
+              <property name="text">
+               <string>db_host</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="menuDbHost_le"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="db_port">
+              <property name="text">
+               <string>db_port</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="menuDbPort_le"/>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="db_username">
               <property name="text">
                <string>db_username</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="1">
+            <item row="4" column="1">
              <widget class="QLineEdit" name="menuDbUsername_le"/>
             </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="menuDbPassword_lbl">
+            <item row="5" column="0">
+             <widget class="QLabel" name="db_password">
               <property name="text">
                <string>db_password</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="1">
+            <item row="5" column="1">
              <widget class="QLineEdit" name="menuDbPassword_le">
               <property name="echoMode">
                <enum>QLineEdit::EchoMode::Password</enum>

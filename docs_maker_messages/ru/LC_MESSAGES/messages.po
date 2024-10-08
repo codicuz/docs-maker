@@ -56,3 +56,9 @@ msgstr "Информация"
 
 msgid "Apply config"
 msgstr "Конфигурация применена"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Not impl"
+msgstr "Не реализовано"
