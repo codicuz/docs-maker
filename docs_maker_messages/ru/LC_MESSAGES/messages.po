@@ -38,3 +38,21 @@ msgstr "Основная страница"
 
 msgid "GUI parser"
 msgstr "Запустить графический интерфейс"
+
+msgid "menu_lbl"
+msgstr "Настройка приложения"
+
+msgid "db_type"
+msgstr "Тип базы данных"
+
+msgid "Apply"
+msgstr "Применить"
+
+msgid "JDBC"
+msgstr "JDBC"
+
+msgid "Information"
+msgstr "Информация"
+
+msgid "Apply config"
+msgstr "Конфигурация применена"

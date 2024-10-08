@@ -140,8 +140,13 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="font">
+         <font>
+          <strikeout>false</strikeout>
+         </font>
+        </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="mainPage_stPage">
          <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -150,6 +155,7 @@
             <property name="font">
              <font>
               <pointsize>24</pointsize>
+              <strikeout>false</strikeout>
              </font>
             </property>
             <property name="text">
@@ -213,6 +219,7 @@
             <property name="font">
              <font>
               <pointsize>24</pointsize>
+              <strikeout>false</strikeout>
              </font>
             </property>
             <property name="text">
@@ -222,6 +229,97 @@
              <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
+          </item>
+          <item>
+           <layout class="QFormLayout" name="formLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="menuDb_lbl">
+              <property name="text">
+               <string>db</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="menuDb_cbx">
+              <item>
+               <property name="text">
+                <string>SQLite3</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../resources/resources.qrc">
+                 <normaloff>:/icons/icons/database-64-blue.svg</normaloff>:/icons/icons/database-64-blue.svg</iconset>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>PostgreSQL</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../resources/resources.qrc">
+                 <normaloff>:/icons/icons/database-64-blue.svg</normaloff>:/icons/icons/database-64-blue.svg</iconset>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="menuDbName_lbl">
+              <property name="text">
+               <string>db_name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="menuDbName_le"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="menuDbUsername_lbl">
+              <property name="text">
+               <string>db_username</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="menuDbUsername_le"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="menuDbPassword_lbl">
+              <property name="text">
+               <string>db_password</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="menuDbPassword_le">
+              <property name="echoMode">
+               <enum>QLineEdit::EchoMode::Password</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="menuApply_btn">
+              <property name="text">
+               <string>apply</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
            <spacer name="verticalSpacer_3">

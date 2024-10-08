@@ -38,3 +38,21 @@ msgstr "Main Page"
 
 msgid "GUI parser"
 msgstr "Start GUI"
+
+msgid "menu_lbl"
+msgstr "Configure"
+
+msgid "db_type"
+msgstr "Database type"
+
+msgid "Apply"
+msgstr "Apply"
+
+msgid "JDBC"
+msgstr "JDBC"
+
+msgid "Information"
+msgstr "Information"
+
+msgid "Apply config"
+msgstr "Configuration applied"
