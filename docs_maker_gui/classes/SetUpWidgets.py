@@ -1,6 +1,7 @@
 from gettext import GNUTranslations
 from docs_maker_gui.ui.docs_maker_main_window import Ui_MainWindow
 from PySide6.QtWidgets import QMessageBox
+from docs_maker.database.init_db_sqlite3 import InitDbSqlite3
 
 class SetUpWidgets():
     def __init__(self, ui: Ui_MainWindow, parent, lang: GNUTranslations = None):
@@ -37,4 +38,9 @@ class SetUpWidgets():
             self.ui.menuDbPassword_le.setEnabled(True)
 
     def applyBtn(self, index):
+        self.dbSqliteInitDb()
         QMessageBox.information(self.parent, self.l.gettext('Information'), self.l.gettext('Apply config'), QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Ok)
+
+    def dbSqliteInitDb(self):
+        idb = InitDbSqlite3(self.ui.menuDbName_le.text())
+        idb.init()
