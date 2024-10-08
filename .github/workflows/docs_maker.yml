@@ -34,10 +34,20 @@ jobs:
       - name: Run flake8 docs_maker_gui
         run: |
           flake8 --ignore E501 --exclude docs_maker_main_window.py,resources.py docs_maker_gui
+
+      - name: Run mypy docs_maker
+        run: |
+          mypy docs_maker
+
+      - name: Run mypy docs_maker_gui
+        run: |
+          mypy docs_maker_gui
           
   build:
     runs-on: self-hosted
-    needs: unittest
+    needs:
+      - unittest
+      - quality
     if: startsWith(github.ref, 'refs/tags/')
     steps:
       - name: Build package

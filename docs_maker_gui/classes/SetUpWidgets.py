@@ -1,8 +1,7 @@
 from gettext import GNUTranslations
-
+from typing import Optional
 import sqlalchemy.exc
 from sqlalchemy.orm import Session
-
 from docs_maker.database.init_db_postgres import InitDbPostgres
 from docs_maker_gui.ui.docs_maker_main_window import Ui_MainWindow
 from PySide6.QtWidgets import QMessageBox
@@ -10,7 +9,7 @@ from docs_maker.database.init_db_sqlite3 import InitDbSqlite3
 
 
 class SetUpWidgets:
-    def __init__(self, ui: Ui_MainWindow, parent, translate: GNUTranslations = None):
+    def __init__(self, ui: Ui_MainWindow, parent, translate: Optional[GNUTranslations] = None):
         self.__ui = ui
         self.__parent = parent
         self.__tr = translate
@@ -88,6 +87,6 @@ class SetUpWidgets:
 
             except sqlalchemy.exc.OperationalError as e:
                 QMessageBox.critical(self.parent, self.tr.gettext('Error'), str(e),
-                                        QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Ok)
+                                     QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Ok)
 
         return None, False
