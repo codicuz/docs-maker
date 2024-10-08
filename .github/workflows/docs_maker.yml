@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  unittest:
+  Unittest:
     runs-on: self-hosted
     steps:
       - name: Checkout repository
@@ -21,7 +21,7 @@ jobs:
         run: |
           python3 -m pytest tests -v
 
-  quality:
+  Quality:
     runs-on: self-hosted
     steps:
       - name: Checkout repository
@@ -43,7 +43,7 @@ jobs:
         run: |
           mypy docs_maker_gui
           
-  build:
+  Publish:
     runs-on: self-hosted
     needs:
       - unittest
