@@ -2,6 +2,7 @@
 .vscode
 .idea
 
+config.ini
 db.sqlite3
 .pytest_cache
 example.db
