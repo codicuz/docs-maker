@@ -19,7 +19,7 @@ jobs:
 
       - name: Execute unit test
         run: |
-          python3 -m pytest tests
+          python3 -m pytest tests -v
 
   build:
     runs-on: self-hosted
