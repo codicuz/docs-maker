@@ -20,6 +20,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFormLayout, QHBoxLayout
     QScrollArea, QSizePolicy, QSpacerItem, QStackedWidget,
     QVBoxLayout, QWidget)
 import docs_maker_gui.resources.resources
+import docs_maker_gui.resources.resources
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -125,6 +126,39 @@ class Ui_MainWindow(object):
         self.mainWindow_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_3.addWidget(self.mainWindow_lbl)
+
+        self.mainIndicators_lbl = QLabel(self.mainPage_stPage)
+        self.mainIndicators_lbl.setObjectName(u"mainIndicators_lbl")
+
+        self.verticalLayout_3.addWidget(self.mainIndicators_lbl)
+
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.mainDbTitle_lbl = QLabel(self.mainPage_stPage)
+        self.mainDbTitle_lbl.setObjectName(u"mainDbTitle_lbl")
+
+        self.horizontalLayout_5.addWidget(self.mainDbTitle_lbl)
+
+        self.mainDbType_lbl = QLabel(self.mainPage_stPage)
+        self.mainDbType_lbl.setObjectName(u"mainDbType_lbl")
+
+        self.horizontalLayout_5.addWidget(self.mainDbType_lbl)
+
+        self.mainDbStatus_lbl = QLabel(self.mainPage_stPage)
+        self.mainDbStatus_lbl.setObjectName(u"mainDbStatus_lbl")
+        self.mainDbStatus_lbl.setPixmap(QPixmap(u":/icons/icons/light-64-red.svg"))
+
+        self.horizontalLayout_5.addWidget(self.mainDbStatus_lbl)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_5)
+
+        self.mainInformation_lbl = QLabel(self.mainPage_stPage)
+        self.mainInformation_lbl.setObjectName(u"mainInformation_lbl")
+        self.mainInformation_lbl.setEnabled(True)
+        self.mainInformation_lbl.setStyleSheet(u"color: blue;")
+
+        self.verticalLayout_3.addWidget(self.mainInformation_lbl)
 
         self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -260,7 +294,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainStacked_sw.setCurrentIndex(1)
+        self.mainStacked_sw.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -273,6 +307,10 @@ class Ui_MainWindow(object):
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.pushButton_12.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.mainWindow_lbl.setText(QCoreApplication.translate("MainWindow", u"main", None))
+        self.mainIndicators_lbl.setText(QCoreApplication.translate("MainWindow", u"indicators", None))
+        self.mainDbTitle_lbl.setText(QCoreApplication.translate("MainWindow", u"database", None))
+        self.mainDbType_lbl.setText(QCoreApplication.translate("MainWindow", u"db_type", None))
+        self.mainInformation_lbl.setText(QCoreApplication.translate("MainWindow", u"information", None))
         self.mWVersion_lbl.setText(QCoreApplication.translate("MainWindow", u"Version", None))
         self.mWVersionValue_lbl.setText(QCoreApplication.translate("MainWindow", u"0.0.0", None))
         self.menu_lbl.setText(QCoreApplication.translate("MainWindow", u"menu_lbl", None))

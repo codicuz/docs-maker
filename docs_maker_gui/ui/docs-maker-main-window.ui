@@ -146,7 +146,7 @@
          </font>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="mainPage_stPage">
          <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -163,6 +163,51 @@
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="mainIndicators_lbl">
+            <property name="text">
+             <string>indicators</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="mainDbTitle_lbl">
+              <property name="text">
+               <string>database</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="mainDbType_lbl">
+              <property name="text">
+               <string>db_type</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="mainDbStatus_lbl">
+              <property name="pixmap">
+               <pixmap resource="../resources/resources.qrc">:/icons/icons/light-64-red.svg</pixmap>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="mainInformation_lbl">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: blue;</string>
+            </property>
+            <property name="text">
+             <string>information</string>
             </property>
            </widget>
           </item>
@@ -369,6 +414,7 @@
  </widget>
  <resources>
   <include location="../resources/resources.qrc"/>
+  <include location="../../../../../../../home/codicus/.designer/resources/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -23,3 +23,5 @@ class LangSwitcher():
         self.ui.db_port.setText(tr.gettext('DB port'))
         self.ui.db_username.setText(tr.gettext('DB user name'))
         self.ui.db_password.setText(tr.gettext('DB user password'))
+        self.ui.mainIndicators_lbl.setText(tr.gettext('Indicators'))
+        self.ui.mainDbTitle_lbl.setText(tr.gettext('Database'))

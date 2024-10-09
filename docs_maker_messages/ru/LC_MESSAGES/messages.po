@@ -62,3 +62,18 @@ msgstr "Ошибка"
 
 msgid "Not impl"
 msgstr "Не реализовано"
+
+msgid "Indicators"
+msgstr "Индикаторы"
+
+msgid "Database"
+msgstr "База данных"
+
+msgid "No db type"
+msgstr "БД не определена"
+
+msgid "Db is not connected"
+msgstr "База данных не подключена. Перейдите в настройки"
+
+msgid "Db is Connected"
+msgstr "База данных подключена"

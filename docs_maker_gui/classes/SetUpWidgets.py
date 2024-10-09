@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from docs_maker.database.init_db_postgres import InitDbPostgres
 from docs_maker_gui.ui.docs_maker_main_window import Ui_MainWindow
 from PySide6.QtWidgets import QMessageBox
+from PySide6.QtGui import QPixmap
 from docs_maker.database.init_db_sqlite3 import InitDbSqlite3
 
 
@@ -31,8 +32,7 @@ class SetUpWidgets:
         self.__tr = data
 
     def onMenuDbOnChange(self):
-        config = self.parent.config.load_config()
-        self.loadConfiguration(config)
+        self.loadConfiguration(self.parent.configurations)
         if self.ui.menuDb_cbx.currentText() == 'SQLite3':
             self.ui.menuDbHost_le.setText('')
             self.ui.menuDbPort_le.setText('')
@@ -66,6 +66,12 @@ class SetUpWidgets:
             self.parent.config.save_config()
             QMessageBox.information(self.parent, self.tr.gettext('Information'), self.tr.gettext('Apply config'),
                                     QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Ok)
+            self.parent.configurations = self.parent.config.load_config()
+
+        return db_session
+
+    def runDbConnection(self) -> Session:
+        db_session, result = self.initDb()
 
         return db_session
 
@@ -90,3 +96,27 @@ class SetUpWidgets:
                                      QMessageBox.StandardButton.Ok, QMessageBox.StandardButton.Ok)
 
         return None, False
+
+    def checkDatabase(self):
+        db_type = self.parent.configurations['database'].get('db_type')
+        if db_type:
+            self.ui.mainDbType_lbl.setText(db_type)
+        else:
+            self.ui.mainDbType_lbl.setText(self.tr.gettext('No db type'))
+
+    def setInformation(self):
+        if not self.parent.dbSession:
+            self.ui.mainInformation_lbl.setText(self.tr.gettext('Db is not connected'))
+            self.ui.mainInformation_lbl.setStyleSheet("color: red;")
+            pixmap = QPixmap(":icons/icons/light-64-red.svg")
+            self.ui.mainDbStatus_lbl.setPixmap(pixmap)
+
+            return False
+
+        if self.parent.dbSession.is_active:
+            self.ui.mainInformation_lbl.setText(self.tr.gettext('Db is Connected'))
+            self.ui.mainInformation_lbl.setStyleSheet("color: green;")
+            pixmap = QPixmap(":icons/icons/light-64-green.svg")
+            self.ui.mainDbStatus_lbl.setPixmap(pixmap)
+
+            return True
