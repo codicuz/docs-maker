@@ -62,3 +62,18 @@ msgstr "Error"
 
 msgid "Not impl"
 msgstr "Not implemented"
+
+msgid "Indicators"
+msgstr "Indicators"
+
+msgid "Database"
+msgstr "Database"
+
+msgid "No db type"
+msgstr "No db type"
+
+msgid "Db is not connected"
+msgstr "Db is not connected. Go to configure page"
+
+msgid "Db is Connected"
+msgstr "Db is Connected"

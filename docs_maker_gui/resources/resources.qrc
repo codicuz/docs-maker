@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/light-64-green.svg</file>
+    <file>icons/light-64-red.svg</file>
     <file>icons/database-64-blue.svg</file>
     <file>icons/home-64-blue.svg</file>
     <file>icons/more-horiz-64-blue.svg</file>

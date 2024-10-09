@@ -21,6 +21,7 @@ class DocsMakerMainWindow(QMainWindow):
         self.setLanguage('ru')
         self.crud = Crud(self.ui)
         self.config = Config(self.ui)
+        self.configurations = self.config.load_config()
         self.initializeUi()
 
     def initializeUi(self):
@@ -28,12 +29,22 @@ class DocsMakerMainWindow(QMainWindow):
         self.ui.main_btn.clicked.connect(self.pageSwitcher.setMainPage)
         self.ui.menu_btn.clicked.connect(self.pageSwitcher.setMenuPage)
         self.ui.menuDb_cbx.currentIndexChanged.connect(self.setUpWidgets.onMenuDbOnChange)
-        self.ui.menuApply_btn.clicked.connect(self.setDbSession)
-        self.ui.menuDb_cbx.setCurrentText(self.config.load_config()['database'].get('db_type'))
+        self.ui.menuApply_btn.clicked.connect(self.setDbSessionManual)
+        self.ui.menuDb_cbx.setCurrentText(self.configurations['database'].get('db_type'))
         self.setUpWidgets.onMenuDbOnChange()
+        self.setUpWidgets.checkDatabase()
+        self.setDbSessionRuntime()
 
-    def setDbSession(self):
+    def setDbSessionManual(self):
         self.dbSession = self.setUpWidgets.applyBtn()
+        self.setUpWidgets.checkDatabase()
+        self.setUpWidgets.setInformation()
+
+    def setDbSessionRuntime(self):
+        if self.configurations['database'].get('db_type'):
+            self.dbSession = self.setUpWidgets.runDbConnection()
+        self.setUpWidgets.checkDatabase()
+        self.setUpWidgets.setInformation()
 
     def setLanguage(self, lang_code):
         self.tr = dm.set_language(lang_code)
