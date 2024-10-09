@@ -20,7 +20,6 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFormLayout, QHBoxLayout
     QScrollArea, QSizePolicy, QSpacerItem, QStackedWidget,
     QVBoxLayout, QWidget)
 import docs_maker_gui.resources.resources
-import docs_maker_gui.resources.resources
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -146,7 +145,7 @@ class Ui_MainWindow(object):
 
         self.mainDbStatus_lbl = QLabel(self.mainPage_stPage)
         self.mainDbStatus_lbl.setObjectName(u"mainDbStatus_lbl")
-        self.mainDbStatus_lbl.setPixmap(QPixmap(u":/icons/icons/light-64-red.svg"))
+        self.mainDbStatus_lbl.setPixmap(QPixmap(u":/icons/icons/light-64-gray.svg"))
 
         self.horizontalLayout_5.addWidget(self.mainDbStatus_lbl)
 

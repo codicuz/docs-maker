@@ -192,7 +192,7 @@
             <item>
              <widget class="QLabel" name="mainDbStatus_lbl">
               <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/icons/icons/light-64-red.svg</pixmap>
+               <pixmap resource="../resources/resources.qrc">:/icons/icons/light-64-gray.svg</pixmap>
               </property>
              </widget>
             </item>
@@ -414,7 +414,6 @@
  </widget>
  <resources>
   <include location="../resources/resources.qrc"/>
-  <include location="../../../../../../../home/codicus/.designer/resources/resources.qrc"/>
  </resources>
  <connections/>
 </ui>
