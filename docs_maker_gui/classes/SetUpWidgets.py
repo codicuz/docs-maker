@@ -1,12 +1,14 @@
 from gettext import GNUTranslations
 from typing import Optional
 import sqlalchemy.exc
+from PySide6.QtGui import QColor, QPainter, QPixmap
 from sqlalchemy.orm import Session
 from docs_maker.database.init_db_postgres import InitDbPostgres
 from docs_maker_gui.ui.docs_maker_main_window import Ui_MainWindow
 from PySide6.QtWidgets import QMessageBox
-from PySide6.QtGui import QPixmap
 from docs_maker.database.init_db_sqlite3 import InitDbSqlite3
+from PySide6.QtSvg import QSvgRenderer
+from PySide6.QtCore import Qt, QSize
 
 
 class SetUpWidgets:
@@ -108,15 +110,31 @@ class SetUpWidgets:
         if not self.parent.dbSession:
             self.ui.mainInformation_lbl.setText(self.tr.gettext('Db is not connected'))
             self.ui.mainInformation_lbl.setStyleSheet("color: red;")
-            pixmap = QPixmap(":icons/icons/light-64-red.svg")
-            self.ui.mainDbStatus_lbl.setPixmap(pixmap)
+            color = QColor("red")
+            self.updateLightColor(color)
 
             return False
 
         if self.parent.dbSession.is_active:
             self.ui.mainInformation_lbl.setText(self.tr.gettext('Db is Connected'))
             self.ui.mainInformation_lbl.setStyleSheet("color: green;")
-            pixmap = QPixmap(":icons/icons/light-64-green.svg")
-            self.ui.mainDbStatus_lbl.setPixmap(pixmap)
+            color = QColor("green")
+            self.updateLightColor(color)
 
             return True
+
+    def updateLightColor(self, color):
+        pixmap = QPixmap(QSize(32, 32))
+        pixmap.fill(QColor(Qt.transparent))
+
+        painter = QPainter(pixmap)
+
+        svg_render = QSvgRenderer(":icons/icons/light-64-gray.svg")
+        svg_render.render(painter)
+
+        painter.setCompositionMode(QPainter.CompositionMode_SourceIn)
+        painter.fillRect(pixmap.rect(), color)
+
+        painter.end()
+
+        self.ui.mainDbStatus_lbl.setPixmap(pixmap)
