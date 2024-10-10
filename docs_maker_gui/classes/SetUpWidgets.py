@@ -102,29 +102,29 @@ class SetUpWidgets:
     def checkDatabase(self):
         db_type = self.parent.configurations['database'].get('db_type')
         if db_type:
-            self.ui.mainDbType_lbl.setText(db_type)
+            self.parent.dbIndicator.ui.db_type.setText(db_type)
         else:
-            self.ui.mainDbType_lbl.setText(self.tr.gettext('No db type'))
+            self.parent.dbIndicator.ui.db_type.setText(self.tr.gettext('No db type'))
 
     def setInformation(self):
         if not self.parent.dbSession:
-            self.ui.mainInformation_lbl.setText(self.tr.gettext('Db is not connected'))
-            self.ui.mainInformation_lbl.setStyleSheet("color: red;")
+            self.parent.dbIndicator.ui.information.setText(self.tr.gettext('Db is not connected'))
+            self.parent.dbIndicator.ui.information.setStyleSheet("color: red;")
             color = QColor("red")
             self.updateLightColor(color)
 
             return False
 
         if self.parent.dbSession.is_active:
-            self.ui.mainInformation_lbl.setText(self.tr.gettext('Db is Connected'))
-            self.ui.mainInformation_lbl.setStyleSheet("color: green;")
+            self.parent.dbIndicator.ui.information.setText(self.tr.gettext('Db is Connected'))
+            self.parent.dbIndicator.ui.information.setStyleSheet("color: green;")
             color = QColor("green")
             self.updateLightColor(color)
 
             return True
 
     def updateLightColor(self, color):
-        pixmap = QPixmap(QSize(32, 32))
+        pixmap = QPixmap(QSize(24, 24))
         pixmap.fill(QColor(Qt.transparent))
 
         painter = QPainter(pixmap)
@@ -137,4 +137,4 @@ class SetUpWidgets:
 
         painter.end()
 
-        self.ui.mainDbStatus_lbl.setPixmap(pixmap)
+        self.parent.dbIndicator.ui.db_status.setPixmap(pixmap)

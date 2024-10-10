@@ -3,12 +3,17 @@ from docs_maker.cli.version import get_version
 
 
 class LangSwitcher():
-    def __init__(self, ui: Ui_MainWindow):
+    def __init__(self, ui: Ui_MainWindow, parent):
         self.__ui = ui
+        self.__parent = parent
 
     @property
     def ui(self):
         return self.__ui
+
+    @property
+    def parent(self):
+        return self.__parent
 
     def translateSetter(self, tr):
         self.ui.mainWindow_lbl.setText((tr.gettext('MainPage')))
@@ -24,4 +29,4 @@ class LangSwitcher():
         self.ui.db_username.setText(tr.gettext('DB user name'))
         self.ui.db_password.setText(tr.gettext('DB user password'))
         self.ui.mainIndicators_lbl.setText(tr.gettext('Indicators'))
-        self.ui.mainDbTitle_lbl.setText(tr.gettext('Database'))
+        self.parent.dbIndicator.ui.database_lbl.setText(tr.gettext('Database'))
