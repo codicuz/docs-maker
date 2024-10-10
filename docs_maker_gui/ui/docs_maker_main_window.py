@@ -114,8 +114,8 @@ class Ui_MainWindow(object):
         self.mainStacked_sw.setFont(font)
         self.mainPage_stPage = QWidget()
         self.mainPage_stPage.setObjectName(u"mainPage_stPage")
-        self.verticalLayout_3 = QVBoxLayout(self.mainPage_stPage)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_6 = QVBoxLayout(self.mainPage_stPage)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.mainWindow_lbl = QLabel(self.mainPage_stPage)
         self.mainWindow_lbl.setObjectName(u"mainWindow_lbl")
         font1 = QFont()
@@ -124,44 +124,22 @@ class Ui_MainWindow(object):
         self.mainWindow_lbl.setFont(font1)
         self.mainWindow_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_3.addWidget(self.mainWindow_lbl)
+        self.verticalLayout_6.addWidget(self.mainWindow_lbl)
 
         self.mainIndicators_lbl = QLabel(self.mainPage_stPage)
         self.mainIndicators_lbl.setObjectName(u"mainIndicators_lbl")
 
-        self.verticalLayout_3.addWidget(self.mainIndicators_lbl)
+        self.verticalLayout_6.addWidget(self.mainIndicators_lbl)
 
-        self.horizontalLayout_5 = QHBoxLayout()
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.mainDbTitle_lbl = QLabel(self.mainPage_stPage)
-        self.mainDbTitle_lbl.setObjectName(u"mainDbTitle_lbl")
+        self.dbIndicator_layout = QHBoxLayout()
+        self.dbIndicator_layout.setObjectName(u"dbIndicator_layout")
+        self.dbIndicator_layout.setContentsMargins(-1, 0, -1, 0)
 
-        self.horizontalLayout_5.addWidget(self.mainDbTitle_lbl)
-
-        self.mainDbType_lbl = QLabel(self.mainPage_stPage)
-        self.mainDbType_lbl.setObjectName(u"mainDbType_lbl")
-
-        self.horizontalLayout_5.addWidget(self.mainDbType_lbl)
-
-        self.mainDbStatus_lbl = QLabel(self.mainPage_stPage)
-        self.mainDbStatus_lbl.setObjectName(u"mainDbStatus_lbl")
-        self.mainDbStatus_lbl.setPixmap(QPixmap(u":/icons/icons/light-64-gray.svg"))
-
-        self.horizontalLayout_5.addWidget(self.mainDbStatus_lbl)
-
-
-        self.verticalLayout_3.addLayout(self.horizontalLayout_5)
-
-        self.mainInformation_lbl = QLabel(self.mainPage_stPage)
-        self.mainInformation_lbl.setObjectName(u"mainInformation_lbl")
-        self.mainInformation_lbl.setEnabled(True)
-        self.mainInformation_lbl.setStyleSheet(u"color: blue;")
-
-        self.verticalLayout_3.addWidget(self.mainInformation_lbl)
+        self.verticalLayout_6.addLayout(self.dbIndicator_layout)
 
         self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.verticalLayout_3.addItem(self.verticalSpacer_2)
+        self.verticalLayout_6.addItem(self.verticalSpacer_2)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -180,7 +158,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.mWVersionValue_lbl)
 
 
-        self.verticalLayout_3.addLayout(self.horizontalLayout)
+        self.verticalLayout_6.addLayout(self.horizontalLayout)
 
         self.mainStacked_sw.addWidget(self.mainPage_stPage)
         self.menuPage_stPage = QWidget()
@@ -307,9 +285,6 @@ class Ui_MainWindow(object):
         self.pushButton_12.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.mainWindow_lbl.setText(QCoreApplication.translate("MainWindow", u"main", None))
         self.mainIndicators_lbl.setText(QCoreApplication.translate("MainWindow", u"indicators", None))
-        self.mainDbTitle_lbl.setText(QCoreApplication.translate("MainWindow", u"database", None))
-        self.mainDbType_lbl.setText(QCoreApplication.translate("MainWindow", u"db_type", None))
-        self.mainInformation_lbl.setText(QCoreApplication.translate("MainWindow", u"information", None))
         self.mWVersion_lbl.setText(QCoreApplication.translate("MainWindow", u"Version", None))
         self.mWVersionValue_lbl.setText(QCoreApplication.translate("MainWindow", u"0.0.0", None))
         self.menu_lbl.setText(QCoreApplication.translate("MainWindow", u"menu_lbl", None))

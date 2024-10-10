@@ -149,7 +149,7 @@
          <number>0</number>
         </property>
         <widget class="QWidget" name="mainPage_stPage">
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
            <widget class="QLabel" name="mainWindow_lbl">
             <property name="font">
@@ -174,42 +174,14 @@
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <widget class="QLabel" name="mainDbTitle_lbl">
-              <property name="text">
-               <string>database</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="mainDbType_lbl">
-              <property name="text">
-               <string>db_type</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="mainDbStatus_lbl">
-              <property name="pixmap">
-               <pixmap resource="../resources/resources.qrc">:/icons/icons/light-64-gray.svg</pixmap>
-              </property>
-             </widget>
-            </item>
+           <layout class="QHBoxLayout" name="dbIndicator_layout">
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
            </layout>
-          </item>
-          <item>
-           <widget class="QLabel" name="mainInformation_lbl">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: blue;</string>
-            </property>
-            <property name="text">
-             <string>information</string>
-            </property>
-           </widget>
           </item>
           <item>
            <spacer name="verticalSpacer_2">
